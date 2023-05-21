@@ -1,3 +1,3 @@
 # SadhguruTV_Unofficial
 Sadhguru AndroidTV App
-APK:
+APK: https://raw.githubusercontent.com/TheSauravChandra/SadhguruTV_Unofficial/main/app/release/SGTV_V1.apk
