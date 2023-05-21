@@ -21,9 +21,17 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    // Read base URL from gradle.properties
+    def baseUrl = project.findProperty("BASE_URL") ?: ""
+
+    // Pass base URL as a buildConfigField
+    defaultConfig{
+        buildConfigField("String", "BASE_URL", "\"${baseUrl}\"")
     }
 }
 
