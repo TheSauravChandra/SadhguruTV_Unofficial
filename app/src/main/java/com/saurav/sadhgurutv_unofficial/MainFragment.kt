@@ -68,7 +68,7 @@ class MainFragment : BrowseSupportFragment() {
                 updateBackground(bg.random())
                 videos as MutableList
                 videos.shuffle()
-                if(true|| latest > VERSION){
+                if(latest > VERSION){
                     Toast.makeText(context, UPDATE_CTA, Toast.LENGTH_LONG).show()
                     videos.add(0, Video(UPDATE, UPDATE_CTA))
                 }
