@@ -12,18 +12,18 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_sgtv"
+        android:icon="@drawable/logosgtv"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.SadhguruTVUnofficial">
 
         <activity
             android:name=".MainActivity"
-            android:banner="@mipmap/ic_sgtv"
+            android:banner="@drawable/logosgtv"
             android:exported="true"
-            android:icon="@mipmap/ic_sgtv"
+            android:icon="@drawable/logosgtv"
             android:label="@string/app_name"
-            android:logo="@mipmap/ic_sgtv"
+            android:logo="@drawable/logosgtv"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
