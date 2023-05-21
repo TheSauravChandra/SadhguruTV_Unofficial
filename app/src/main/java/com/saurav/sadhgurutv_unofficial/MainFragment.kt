@@ -58,7 +58,8 @@ class MainFragment : BrowseSupportFragment() {
 
     private fun getData() {
         val exceptionHandler = CoroutineExceptionHandler { _, _ ->
-            Toast.makeText(context, "Please check sometime later, API Error", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "Please check sometime later, API Error", Toast.LENGTH_LONG)
+                .show()
         }
         lifecycleScope.launch(exceptionHandler) {
             RetrofitClient.getApiService().getMainResponse()?.takeIf {
@@ -68,7 +69,7 @@ class MainFragment : BrowseSupportFragment() {
                 updateBackground(bg.random())
                 videos as MutableList
                 videos.shuffle()
-                if(latest > VERSION){
+                if (latest > VERSION) {
                     Toast.makeText(context, UPDATE_CTA, Toast.LENGTH_LONG).show()
                     videos.add(0, Video(UPDATE, UPDATE_CTA))
                 }
@@ -82,7 +83,7 @@ class MainFragment : BrowseSupportFragment() {
         val rowsAdapter = ArrayObjectAdapter(ListRowPresenter())
         val cardPresenter = CardPresenter()
         val listRowAdapter = ArrayObjectAdapter(cardPresenter)
-        listRowAdapter.addAll(0, list.mapIndexed{ i,v-> v.copy(pos = i) })
+        listRowAdapter.addAll(0, list.mapIndexed { i, v -> v.copy(pos = i) })
         val header = HeaderItem(0, "Greatest of All Time")
         rowsAdapter.add(ListRow(header, listRowAdapter))
         adapter = rowsAdapter
@@ -100,7 +101,7 @@ class MainFragment : BrowseSupportFragment() {
             row: Row
         ) {
             if (item is Video) {
-                if(item.v!=UPDATE_CTA) {
+                if (item.v != UPDATE_CTA) {
                     val intent = Intent(context!!, PlaybackActivity::class.java)
                     intent.putExtra(MOVIE, item)
                     startActivity(intent)

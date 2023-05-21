@@ -6,9 +6,6 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.leanback.app.ErrorSupportFragment
 
-/**
- * This class demonstrates how to extend [ErrorSupportFragment].
- */
 class ErrorFragment : ErrorSupportFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

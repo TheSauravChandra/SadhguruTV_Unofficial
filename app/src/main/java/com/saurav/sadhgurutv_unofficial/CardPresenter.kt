@@ -1,12 +1,9 @@
 package com.saurav.sadhgurutv_unofficial
 
 import android.graphics.Color
-import android.graphics.PorterDuff
-import android.graphics.PorterDuffColorFilter
 import android.graphics.drawable.Drawable
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.alpha
 import androidx.leanback.widget.ImageCardView
 import androidx.leanback.widget.Presenter
 import com.bumptech.glide.Glide
@@ -18,10 +15,6 @@ import com.saurav.sadhgurutv_unofficial.retrofit.Constants.UPDATE
 import com.saurav.sadhgurutv_unofficial.retrofit.Constants.UPGRADE_THUMB
 import kotlin.properties.Delegates
 
-/**
- * A CardPresenter is used to generate Views and bind Objects to them on demand.
- * It contains an ImageCardView.
- */
 class CardPresenter : Presenter() {
     private var mDefaultCardImage: Drawable? = null
     private var sSelectedBackgroundColor: Int by Delegates.notNull()
@@ -58,10 +51,16 @@ class CardPresenter : Presenter() {
                 .load(if (movie.t != UPDATE) SG_THUMB else UPGRADE_THUMB)
                 .centerCrop()
                 .apply {
-                    if (movie.t != UPDATE){
-                        apply(RequestOptions.bitmapTransform(ColorFilterTransformation(
-                            (if(movie.pos%2==0) Color.CYAN else Color.MAGENTA).addAlphaToColor(60)
-                        )))
+                    if (movie.t != UPDATE) {
+                        apply(
+                            RequestOptions.bitmapTransform(
+                                ColorFilterTransformation(
+                                    (if (movie.pos % 2 == 0) Color.CYAN else Color.MAGENTA).addAlphaToColor(
+                                        60
+                                    )
+                                )
+                            )
+                        )
                     }
 
 

@@ -11,7 +11,6 @@ import androidx.leanback.widget.PlaybackControlsRow
 import com.saurav.sadhgurutv_unofficial.bean.Video
 import com.saurav.sadhgurutv_unofficial.retrofit.Constants.MOVIE
 
-/** Handles video playback with media controls. */
 class PlaybackVideoFragment : VideoSupportFragment() {
 
     private lateinit var mTransportControlGlue: PlaybackTransportControlGlue<MediaPlayerAdapter>
