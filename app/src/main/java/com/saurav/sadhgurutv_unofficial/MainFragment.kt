@@ -64,19 +64,6 @@ class MainFragment : BrowseSupportFragment() {
             RetrofitClient.getApiService().getMainResponse()?.takeIf {
                 it.isSuccessful && it.body() != null && it.body()!!.videos.isNullOrEmpty().not()
             }?.body()?.apply {
-
-                    /*
-                    - publish apk in git,
-                    - put link of apk on site: apk has site link already /?page=sgtv ,
-                    - make qr video -> my site blog(& URL decide) on how to install, & checkout more projects claim & follow on IG,linkedin.. -> git url/repo.
-
-                    - more colourful, more than asked(needed) give..
-                    - i can play with the world, by tech -> create media routes n self publish & give utils to people..
-                    THIS FREE MEI SABKO ACCESS KRNA IS GEM AVAILABLE ONLY TO AN ENGINEER, & IS ENTREPRENEUR BIRTHER.
-
-                    - DUMP VIDEOS 1 PLACE, NOT IN API WALI JAGAH..
-                    & SAME SERIALLY.
-                     */
                 bgImgs = bg
                 updateBackground(bg.random())
                 videos as MutableList
